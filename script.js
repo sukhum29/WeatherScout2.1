@@ -92,6 +92,29 @@ function toggleTemperatureUnit() {
 
   isCelsius = !isCelsius; 
 }
+function convertToCelsius(temperature) {
+  return (temperature - 32) * 5/9;
+}
+
+let iscelsius = true;
+
+function toggleTemperatureUnit() {
+  const temperatureElement = document.getElementById('temp2');
+  const unitSymbolElement = document.querySelector('.text-body-secondary');
+
+  if (iscelsius) {
+    const temperatureInCelsius = convertToCelsius(parseFloat(temperatureElement.textContent));
+    temperatureElement.textContent = temperatureInCelsius.toFixed(2);
+    unitSymbolElement.textContent = ' °C';
+  } else {
+    const temperatureInFahrenheit = (parseFloat(temperatureElement.textContent) * 9/5) + 32;
+    temperatureElement.textContent = temperatureInFahrenheit.toFixed(2);
+    unitSymbolElement.textContent = ' °F';
+  }
+
+  iscelsius = !iscelsius;
+}
+
 
 
 const toggleUnitButton = document.getElementById('toggleUnitButton');
