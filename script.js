@@ -135,4 +135,4 @@ const temperatureElement = document.getElementById('temp2');
 temperatureElement.textContent = initialTemperatureCelsius.toFixed(2);
 const backgroundElement = document.getElementById('background');
 
-getWeather("Kolkata")
+getWeather("Chennai")
